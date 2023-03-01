@@ -1,0 +1,188 @@
+% BEGIN ------------------   Version   ------------------- END %
+
+\newcommand{\start}{February 11, 2013} % Definie la commande << start >>, à laquelle on a attribué une date.
+\newcommand{\version}{\today} % Define la commande << version >>, à laquelle on a attribué ici la date d'aujoud'hui.
+\newcommand{\final}{×} % Define la commande << final >>, à laquelle on a attribué une date.
+
+
+% BEGIN ------------------   Classe du document   ------------------- END %
+
+\documentclass[a4paper,11pt]{article} % Le format du papier, la taille de police d'écriture, le modèle du document.
+% Classe existante: article, book, letter, beamer, amsart.
+
+% BEGIN-------------------   Packages   ------------------- END %
+
+\usepackage[french,english,german,italian]{babel} % Permet de sélectionner la langue, ici je vais avoir le choix entre le français, l'anglais, l'allemand, et l'italien. 
+\usepackage[utf8]{inputenc} % Evite le problème des accents.
+\usepackage{graphicx} % Permet d'incorporer des images.
+\usepackage{geometry} % Permet de la flexbilité sur la géométrie.
+\usepackage{amsfonts,amsmath,amsthm,amssymb,amscd,amsxtra} % Package pour les maths.
+\usepackage{array} % Package pour dessiner des tableaux.
+\usepackage{color} % Permet d'utiliser des couleurs personnalisées (black, white, red, green, blue, cyan, magenta).
+\usepackage[hyperindex=true,colorlinks=true,linkcolor=black,urlcolor=black, citecolor= black, pagebackref=true]{hyperref} % Insere des liens (liens dans les indexs, colorie les liens, couleur des liens interne, couleur des hyperliens, couleur des citations, permet de faire figurer dans la bibliographie les pages où sont cités les article).
+\usepackage{cancel} % Permet de barrer des éléments.
+\usepackage{multicol} % Permet de mettre une partie de son document sur plusieurs colonnes.
+\usepackage{latexsym} % Permet d'inserer d'autres symboles mathématique.
+\usepackage{mathrsfs} % Permet d'utiliser \mathscr{}.
+%\usepackage{footnotebackref} % Permet la création de liens interne à partir des footnote.
+\usepackage{natbib} % Permet de changer la couleur des numéros dans la biblio.
+
+% BEGIN --------------------  BACKREF  -------------------- END %
+
+
+% BEGIN --------------------  Commandes personnalisées  -------------------- END %
+
+\newcommand{\bra}[1]{\langle{#1}|} % Definie le Bra.       
+\newcommand{\ket}[1]{|{#1}\rangle} % Definie le Ket.
+\newcommand{\abs}[1]{\left|{#1}\right|} % Define la valeur absolue.
+\graphicspath{{./figures/}} % Permet d'aller chercher les figures, images, etc dans un dossier nommé figures.
+
+% BEGIN --------------------  numberwithin  -------------------- END %
+
+\numberwithin{equation}{section} % Permet de numéroter les equations suivant la section où elles se trouvent.
+\numberwithin{figure}{section} % Permet de numéroter les figures suivant la section où elles se trouvent.
+
+% BEGIN --------------------  theoremstyle  -------------------- END %
+
+\theoremstyle{plain} % plain pour les théorèmes, lemmes, corollaires, conjectures.
+\newtheorem{thm}{Theorem}[section] 
+\renewcommand{\thethm}{\empty{}} 
+\newtheorem{lem}{Lemma}[section] 
+\renewcommand{\thelem}{\empty{}} 
+\newtheorem{prop}{Proposition}[section]
+\renewcommand{\theprop}{\empty{}} 
+\newtheorem{cor}{Corollary}[section]
+\renewcommand{\thecor}{\empty{}} 
+\newtheorem{demo}{Proof}[section]
+\renewcommand{\thedemo}{\empty{}} 
+
+
+\theoremstyle{definition} % definition : définitions, exemples, problèmes.
+\newtheorem{dfn}{Definition}[section]
+\renewcommand{\thedfn}{\empty{}}
+\newtheorem{dfns}{Definitions}[section]
+\renewcommand{\thedfns}{\empty{}} 
+\newtheorem{conj}{Conjecture}[section]
+\renewcommand{\theconj}{\empty{}} 
+\newtheorem{ex}{Example}[section]
+\renewcommand{\theex}{\empty{}} 
+
+\theoremstyle{remark} % remark : remarque, note, conclusion.
+\newtheorem{rem}{Remark}[section]
+\renewcommand{\therem}{\empty{}} 
+\newtheorem{note}{Note}[section]\graphicspath{{./figures/}} % Permet d'aller chercher les figures, images, etc dans un dossier nommé figures.
+
+\renewcommand{\thenote}{\empty{}} 
+\newtheorem{case}{Case}[section]
+\renewcommand{\thecase}{\empty{}} 
+
+
+% BEGIN ======================================================================================================== END %
+% ===== %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        DOCUMENT         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ==== %
+% BEGIN ======================================================================================================== END %
+
+\begin{document}
+
+%%EX1
+
+Soit la suite de nombres complexes $(z_n)$ définie pour tout entier $n$ par 
+$$
+\left\{
+\begin{array}{l}
+z_0 = 100\\
+z_{n+1} = \frac{i}{3} z_{n} 
+\end{array}
+\right. .
+$$
+Le plan est muni d’un repère orthonormé direct $\left(O;\vec{u},\vec{v}\right)$. Pour tout entier naturel $n$, on note $M_n$ le point d’affixe $z_n$. 
+
+
+Démontrer que, pour tout entier naturel $n$, les points $o$, $M_n$ et $M_{n+2}$ sont alignés.
+
+
+Soit $n$ un entier naturel. $$z_{n+2} = \frac{i}{3} z_{n+1} = \left(\frac{i}{3}\right)^2 z_{n} = -\frac{1}{9} z_n.$$ Donc $$\vec{OM_{n+2}} = -\frac{1}{9} \vec{OM_n}.$$ On en deduit que les vecteurs $\vec{OM_n}$ et $\vec{OM_{n+2}}$ sont colinéaires, les points $O$, $M_n$ et $M_{n+2}$ sont donc bien alignés.
+
+
+On rappelle qu’un disque de centre $A$ et de rayon $r$, où $r$ est un nombre réel positif, est l’ensemble des points $M$ du plan tels que $AM \leq r$. Démontrer que, à partir d’un certain rang, tous les points $M_n$ appartiennent au disque de centre $O$ et de rayon $1$.
+
+
+Soit $n \in \mathbb{N}$. En utilisant les donnée de l'exercice on peut écrire $$OM_{n+1} = \left| z_{n+1} \right| = \left| \frac{i}{3} z_{n} \right| = \frac{\left| i \right|}{3} \left| z_n \right| = \frac13 OM_n.$$ Donc la suite $(u_n)_{n\in\mathbb{N}} = (OM_n)_{n\in\mathbb{N}}$ est la suite géométrique de premier terme $u_0 = OM_0 = \left|z_0\right| = 100$ et de raison $q=\frac13$. On en déduit que pour tout entier naturel $n$, $$OM_n = OM_0 \times q^n = 100 \left( \frac13 \right)^n = \frac{100}{3^n}.$$ Puisque $-1 < \frac13 < 1$, on sait que $$\lim_{n \to +\infty} OM_n = \lim_{n \to +\infty} \frac{100}{3^n} 0.$$ En particulier, il existe un rang $n_0$ tel que, pour $n \geq n_0$, on a $OM_n \leq 1$. On dit que $n_0$ est un rang à partir duquel tous les points $M_n$ appartiennent au disque de centre $O$ et de rayon $1$. Déterminons explicitement un tel rang. Soit $n$ un entier naturel. $$OM_n \leq 1 \Leftrightarrow \frac{100}{3^n} \leq 1 \Leftrightarrow 100 \leq 3^n \Leftrightarrow 3^n \geq 100 \Leftrightarrow n \geq 5.$$ A partir du rang $n_0 = 5$, tous lespoints $M_n$ appartiennent au disque de centre $O$ et de rayon $1$.
+
+
+%%EX2
+
+
+Le plan complexe est muni d'un repère orthonormé direct $\left(O;\vec{u},\vec{v}\right)$ d’unité 2 cm. On appelle $f$ la fonction qui, à tout point $M$ d'affixe un nombre complexe $z$, distinct du point O, associe le point $M'$ d'affixe $z'$ tel que $$z' = - \frac{1}{z}.$$
+
+
+On considère les points $A$ et $B$ d'affixes respectives $z_{A} = -1 + i$ et $z_{B} = \frac12 e^{i\frac{\pi}{3}}$.
+
+
+Déterminer la forme algébrique de l'affixe du point $A'$ image du point $A$ par la fonction $f$.
+
+
+$z_{A'} = -\frac{1}{-1 + i} = \frac{1}{1 - i} = \frac{1 + i}{2} = \frac12 + \frac12 i$
+
+
+Déterminer la forme exponentielle de l'affixe du point $B'$ image du point $B$ par la fonction $f$.
+
+
+$z_{B'} = -\frac{1}{\frac12 e^{i\frac{\pi}{3}}} = -2 e^{-i\frac{\pi}{3}}$ qui n'est pas l'écriture exponentielle ; or $- 1 = e^{i\pi}$ ; donc $z_{B'} = 2 \times e^{i\pi} \times e^{-i\frac{\pi}{3}} = 2 e^{i\frac{2\pi}{3}}$. 
+
+
+Soit $r$ un réel strictement positif et $\theta$ un réel. On considère le complexe $z$ défini par $z = r e^{i\theta}$.
+
+
+Montrer que $z' = \frac{1}{r} e^{i \left(\pi - \theta\right)}$. 
+
+
+$$z' = -\frac{1}{r e^{i\theta}} = -\frac{1}{r} e^{-i\theta} = \frac{1}{r} e^{-i\theta} e^{i\pi} = \frac{1}{r} e^{i(\pi - \theta)}$$
+
+
+Est-il vrai que si un point $M$, distinct de $O$, appartient au disque de centre $O$ et de rayon $1$ sans appartenir au cercle de centre $O$ et de rayon $1$, alors son image $M'$ par la fonction $f$ est à l'extérieur de ce disque ? Justifier. 
+
+
+Si $M$, distinct de $O$, appartient au disque de centre $O$ et de rayon $1$ sans appartenir au cercle de centre $O$ et de rayon $1$, alors $OM < 1$. Donc $$
+OM < 1 
+\Leftrightarrow \left| z \right| < 1 
+\Leftrightarrow \left| \dfrac{1}{z} \right| > 1
+\Leftrightarrow \left| -\dfrac{1}{z} \right| >1 
+\Leftrightarrow OM' > 1
+$$ 
+On en déduit donc que l'affirmation est vraie: si un point $M$, distinct de $O$, appartient au disque de centre $O$ et de rayon $1$ sans appartenir au cercle de centre $O$ et de rayon $1$, alors son image $M'$ par la fonction $f$ est à l'extérieur de ce disque.
+
+
+Soit le cercle $\Gamma$ de centre K d'affixe $z_{K} = -\frac{1}{2}$ et de rayon $\frac12$.
+
+
+Montrer qu'une équation cartésienne du cercle $\Gamma$ est $x^2 + x + y^2 = 0$.
+
+
+\begin{eqnarray*} 
+M(z) \in \Gamma 
+&\Leftrightarrow& MK^2 = \frac14 \\ 
+&\Leftrightarrow& \left| z - z_K \right|^2 = \frac14 \\
+&\Leftrightarrow& \left|z+\frac12 \right|^2 =\frac14 \\
+&\Leftrightarrow& \left|z+\frac12 \right|^2 =\frac14 \\
+&\Leftrightarrow& \left|x+\frac12 + i y\right|^2 =\frac14 \\
+&\Leftrightarrow& \left( x+\frac12\right) ^2 +y^2 =\frac14 \\
+&\Leftrightarrow& x^2+x+\dfrac14 +y^2 =\dfrac14.
+\end{eqnarray*}
+On a donc bien $\Gamma : x^2 + x + y^2 = 0$.	
+
+
+Soit $z = x + \text{i}y$ avec $x$ et $y$ non tous les deux nuls. Déterminer la forme algébrique de $z'$ en fonction de $x$ et $y$.
+
+
+$z'=-\dfrac{1}{x+\text{i}y}=-\dfrac{x-\text{i}y}{x^2+y^2}$. Donc $z'=-\dfrac{x}{x^2+y^2}+\dfrac{y}{x^2+y^2}~\text{i}$.
+	
+	
+Soit $M$ un point, distinct de $O$, du cercle $\Gamma$. Montrer que l'image $M'$ du point $M$ par la fonction $f$ appartient à la droite d'équation $x = 1$.
+
+
+$M$ un point de $\Gamma$, distinct de $O$ alors $x^2 + x + y^2 = 0$ donc $x^2+y^2=-x\neq0$. On en déduit que $Re\left(z'\right) = -\frac{x}{x^2+y^2}=-\frac{x}{-x}=1$. Donc l'image $M'$ du point $M$ par la fonction $f$ appartient à la droite d'équation $x = 1$.
+
+
+\end{document}
+
+\end{document}

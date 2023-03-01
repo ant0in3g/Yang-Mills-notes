@@ -1,0 +1,897 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+\usepackage{color}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%      Theme     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{movie15}
+%\usepackage{beamerthemesplit}
+%\usepackage{beamerthemeMalmoe}
+%\usepackage{beamerinnerthemerounded}
+\usepackage{beamerouterthememiniframes}
+%\usepackage{beamerouterthemeshadow}
+%\usepackage{beamerouterthemesidebar}
+%\usepackage{beamerthemeAnnArbor}
+%\usepackage{beamerthemeBerkeley}
+%\usepackage{beamerthemeCambridgeUS}
+%\usepackage{beamerthemeclassic}
+%\usepackage{beamerthemeCopenhagen}
+%\usepackage{beamerthemelined}
+%\usepackage{beamerthemeMadrid}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\begin{document}
+
+\title{\LARGE Renormalisation des théories de Jauge}  
+
+\author{Antoine Géré \\ Responsable de stage : Jean-Christophe Wallet}
+
+\date{26 juin 2012} 
+
+\frame{\titlepage
+
+} 
+
+\frame{\frametitle{Table des matières} \tiny \tableofcontents} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Classique} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Quelques considérations classiques}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Quelques considérations classiques} 
+\scriptsize
+
+Soit $G$ groupe de Lie compact de dimension n, et $\cal{G}$ son algèbre de Lie.\\
+Lagrangien de Yang Mills,
+\begin{eqnarray}
+ && \mathcal{L}_{\small YM} = \frac{1}{8} tr\left(F_{\mu\nu}F_{\mu \nu}\right)  \\
+ && \text{avec,} \hspace{2mm} F_{\mu \nu}=\partial_{\nu}A_{\mu} - \partial_{\mu}A_{\nu} + g[A_{\mu},A_{\nu}].
+\end{eqnarray}
+ On écrit $A_{\mu} = A_{\mu}^{a} T^{a}$.
+\begin{eqnarray}
+ F_{\mu \nu}^{a} = \partial_{\nu}A_{\mu}^{a} - \partial_{\mu}A_{\nu}^{a} + g f^{abd} A_{\mu}^{b} A_{\nu}^{d}
+\end{eqnarray}
+où $f^{abd}$ est la constante de structure de $\cal{G}$, completement antisymétrique.\\
+
+\vspace{5mm}
+
+La transformation de jauge défine comme suit :
+\begin{eqnarray}
+A_{\mu} \rightarrow  A^{\omega}_{\mu}(x) &=& \omega(x)A_{\mu}(x)\omega^{-1}(x) + ( \partial_{\mu} \omega(x) ) \omega^{-1}(x)
+\end{eqnarray}
+Transformation infinitésimale :
+\begin{eqnarray}
+ && \omega = 1+ u + \mathcal{O}(u^2)  \\
+ && A^{\omega}_{\mu} = A_{\mu} - [A_{\mu},u] + \partial_{\mu}u  
+\end{eqnarray}
+$\mathcal{L}_{\small YM}$ est invariant sous cette transformation de jauge.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Quantification} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Quantification Lagrangienne}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Quantification Lagrangienne}
+\scriptsize
+
+Soit $\cal{I}$ l'action invariante de jauge du champ de Yang Mills,
+\begin{eqnarray}
+ \mathcal{I}_{YM} = \frac{1}{8} \int dx \hspace{1mm} tr ( F_{\mu \nu} F_{\mu \nu} ).
+\end{eqnarray}
+Matrice $\cal{S}$, opérateur d'évolution ''globale'' :
+\begin{eqnarray}
+ \mathcal{S} &=& \int exp\left( i \mathcal{I}_{YM} \right) dA_{\mu}  ,
+\end{eqnarray}
+Intégration sur toutes les configuratons des $A_{\mu}$, \\
+or $exp\left( i \mathcal{I}_{YM} \right)$ prend la même valeur pour tout les $A_{\mu}$ qui se déduisent 
+l'un de l'autre par une transformation de jauge, 
+\begin{center}
+$\mathcal{S}$ est donc infini !  
+\end{center}
+Fixage de jauge.\\
+$\Rightarrow$ Méthode de Faddeev et Popov.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Méthode de Faddeev et Popov}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\frame{
+\frametitle{Méthode de Faddeev et Popov}
+\scriptsize
+
+Méthode de Faddeev et Popov, ou comment réécrire 1 !
+
+\vspace{5mm}
+
+Idée Principale : \hspace{1cm}  $ \int_{\mathbb{R}} \delta ( f(x) ) dx = \frac{1}{|f'(x)|}  $.  \\
+\vspace{2mm}
+On va exploiter cette relation !
+
+\vspace{3mm}
+On réécrie 1 ''dans la jauge de Lorentz''.
+\begin{eqnarray}
+ && \Delta^{-1}(A_{\mu}):= \int \delta \left(\partial_{\mu}A^{\omega}_{\mu}\right)d\omega  \\
+ && \text{avec} \hspace{5mm} \Delta(A_{\mu}) = 
+ \left|det\left(\frac {\partial_{\mu}A^{\omega}_{\mu}}{\partial_{\mu}\omega}\right)\right| = det(M)
+\end{eqnarray}
+On peut écrire : \\
+\vspace{-8mm}
+\begin{eqnarray}
+ \mathcal{S} &=& \int exp\left( i \mathcal{I}(A_{\mu}) \right) dA_{\mu} \hspace{2mm} 
+ \Delta(A_{\mu}) \delta \left(\partial_{\mu}A_{\mu}^{\omega}\right) d\omega \\
+             &=& \int d\omega \int exp\left( i \mathcal{I}(A_{\mu}) \right) dA_{\mu} \hspace{2mm} 
+ \Delta(A_{\mu}) \delta \left(\partial_{\mu}A_{\mu}\right)  \\
+ \mathcal{S} &=& N^{-1} \int exp\left( i \mathcal{I}(A_{\mu}) \right) dA_{\mu} \hspace{2mm} 
+ \Delta(A_{\mu}) \delta \left(\partial_{\mu}A_{\mu}\right)
+\end{eqnarray}
+
+}
+
+\frame{
+\scriptsize
+
+$\bullet$ Jauge plus générale : $ \partial_{\mu}A_{\mu} - b(x) = 0 $, 
+\begin{eqnarray}
+\mathcal{S} &=& N^{-1} \int exp\left( i \mathcal{I}(A_{k}) \right) \Delta(A_{\mu}) \delta \left(\partial_{\mu}A_{\mu} - b(x) \right) dA_{\mu}
+\end{eqnarray}
+Moyenne sur $b(x)$ avec un poids gaussien $\int \frac{i}{2\alpha} b^2  dx$ : 
+\begin{eqnarray*}
+\mathcal{S} &=& N^{-1} \int exp\left( i \mathcal{I}(A_{k}) - \int \frac{i}{2\alpha} (\partial_{\mu}A_{\mu})^2  dx \right)
+\Delta(A_{\mu}) \delta \left(\partial_{\mu}A_{\mu} \right) dA_{\mu}
+\end{eqnarray*}
+$\bullet$ On peut écrire $\Delta(A_{\mu})$ à l'aide des variables de grassmann de la façon suivante :
+\begin{equation}
+ \Delta(A_{\mu}) := det(M) = \int exp \left(i \int \overline{c}^{a}(x)M^{ab}c^{b}(x) dx \right) d\overline{c} dc 
+\end{equation}
+\vspace{1mm}
+Finalement :
+\begin{eqnarray}
+ \mathcal{S} &=& \int exp\left(i \int \left[  
+\frac{-1}{4} F^{a}_{\mu\nu}(x)F^{a}_{\mu \nu}(x) + \overline{c}^{a}(x)M^{ab}c^{b}(x) - \frac{1}{\alpha} (\partial_{\mu}A_{\mu})^2  
+\right] dx \right) dA_{\mu} dc d\overline{c}  \nonumber  \\
+\end{eqnarray}
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Règles de Feynman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Propagateurs}
+\scriptsize
+
+
+
+\vspace{1cm}
+
+
+
+}
+
+\frame{
+\frametitle{Vertex}
+\scriptsize
+
+
+
+\vspace{5mm}
+
+
+
+\vspace{5mm}
+
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{BRST}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Symétrie BRST (Becchi, Rouet, Stora, et Tyupkin)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Symétrie BRST (Becchi, Rouet, Stora, et Tyupkin) }
+\scriptsize
+
+Action fixée de jauge :
+\begin{equation}
+ \mathcal{L} = \mathcal{L}_{YM} +\mathcal{L}_{fix.} +\mathcal{L}_{FP}
+\end{equation}
+$\mathcal{I}$ n'est pas invariante de jauge.
+\begin{eqnarray*}
+ && \mathcal{L}_{YM} = \frac{1}{8} tr \left[ F_{\mu \nu}F_{\mu \nu} \right] = \frac{-1}{4} F^{a}_{\mu \nu}F^{a}_{\mu \nu}
+\hspace{5mm} \rightarrow \hspace{5mm} \textbf{lagrangien de Yang Mills}\\
+ && \mathcal{L}_{fix.} = - \frac{1}{4\alpha} (\partial_{\mu} A_{\mu})^{2} = \frac{1}{2\alpha} (\partial_{\mu} A^{a}_{\mu})^{2}
+\hspace{5mm} \rightarrow \hspace{5mm} \textbf{lagrangien qui fixe de jauge}\\
+ && \mathcal{L}_{FP} =  \overline{c}^{a} \left( \Box c^{a} -g f^{abd} \partial_{\mu} \left( A^{b}_{\mu} c^{d} \right) \right)
+\hspace{5mm} \rightarrow \hspace{5mm} \textbf{lagrangien des fantômes}
+\end{eqnarray*}
+Seule $\mathcal{L}_{YM}$ est inavariant de jauge. \\
+$\mathcal{L}_{fix.}$ et $\mathcal{L}_{FP}$ introduisent des termes suppémentaires !
+
+}
+
+\frame{
+\scriptsize
+
+$\bullet$ Modifier la transformation de jauge pour conserver une symétrie ! On pose : $ u = c$.
+\begin{eqnarray}
+  A^{\omega}_{\mu} &\simeq& A_{\mu} - [A_{\mu},c] + \partial_{\mu}c + \mathcal{O} (c) \\
+                   &\simeq& A_{\mu}  + D_{\mu} c + \mathcal{O} (c)
+\end{eqnarray}
+$ \mathcal{L}_{YM} $ reste invariant. \\
+Mais :
+\vspace{-0.6cm}
+\begin{eqnarray}
+ \mathcal{L}_{fix.}  \rightarrow \frac{1}{2 \alpha} \left( \partial_{\mu} A^{a}_{\mu} \right)^{2} 
++ \frac{1}{\alpha} \left(  \partial_{\mu}D_{\mu} c^{a}  \right) \left( \partial_{\mu} A^{a}_{k} \right) + \mathcal{O} (c^{a})  
+\end{eqnarray}
+
+
+
+$\bullet$ Définir la transformations des fantômes, pour conpenser les termes supplémentaires ! 
+\begin{eqnarray}
+ \mathcal{L}_{FP} &=&  \overline{c}^{a} \left( \Box c^{a} -g f^{abd} \partial_{\mu} \left( A^{b}_{\mu} c^{d} \right) \right) \\
+                  &=&  \overline{c}^{a} (\partial_{\mu}D_{\mu} c^{a} )
+\end{eqnarray}
+Si on pose que $\overline{c}$ se transforme comme :
+\begin{eqnarray}
+ \overline{c}^{a} &\rightarrow& \overline{c}^{a} - \frac{1}{\alpha} \left( \partial_{\mu} A^{a}_{\mu} \right) ,
+\end{eqnarray}
+compense exactement le terme supplémentair introduit par $\mathcal{L}_{fix.}$.
+
+}
+
+\frame{
+\scriptsize
+$\bullet$ Laisser invariant $\mathcal{L}_{FP}$. \\
+C'est le cas si : 
+\begin{eqnarray}
+ c^{a} \rightarrow c^{a} - \frac{1}{2} f^{abd} c^{b} c^{d} 
+\end{eqnarray}
+
+\vspace{2mm}
+$\bullet$ \underline{Transformations BRST}
+\begin{eqnarray}
+                A_{\mu}^{a}         \rightarrow       A_{\mu}^{a}           +  \delta A_{\mu}^{a}
+\hspace{5mm}  &\text{avec}&   \hspace{5mm}  
+\delta  A_{\mu}^{a} := s  A_{\mu}^{a} = D_{\mu} c^{a} \\
+                \overline{c}^{a}                \rightarrow      \overline{c}^{a}                 +  \delta \overline{c}^{a} 
+\hspace{5mm}  &\text{avec}&   \hspace{5mm}    
+\delta  \overline{c}^{a} := s  \overline{c}^{a} = - \frac{1}{\alpha} ( \partial_{\mu} A_{\mu}^{a} ) \\
+               c^{a}     \rightarrow      c^{a}      +  \delta  c^{a}   
+\hspace{5mm}  &\text{avec}&   \hspace{5mm} 
+\delta  c^{a} := s  c^{a} = - \frac{1}{2} f^{abd} c^{b} c^{d}  .
+\end{eqnarray}
+Le jacobien vaut 1.\\
+
+$\Rightarrow$ La matrice $\cal{S}$ est invariante sous BRST ! 
+
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Renormalisation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Calcul d'un diagramme}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Calcul d'un diagramme}
+\scriptsize
+
+
+En appliquant les règles de Feynman, on obtient :
+\begin{eqnarray}
+ \Pi^{ab}_{\mu\nu}(p) &=&  - i g^{2}  \delta^{ab} \int \frac{d^{4}k}{\left(2\pi\right)^4} 
+[g_{\mu\nu}\left((p+k)^{2} +(k-2p)^2\right) \nonumber \\ && +  p_{\mu}p_{\nu}\left(n-6\right) +k_{\mu}k_{\nu}\left(4n-6\right)  \nonumber  \\
+&&  +(3-2n)(p_{\nu}k_{\mu}+p_{\mu}k_{\nu})]\frac{1}{k^2+i0}\frac{1}{(k-p)^2+i0}
+\end{eqnarray}
+
+\vspace{3mm}
+
+On s'aperçoit que $\Pi^{ab}_{\mu\nu}(p)$ diverge.
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Comptage en Puissance}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Comptage en Puissance}
+\scriptsize
+\vspace{5mm}
+L'amplitude type :
+\begin{eqnarray}
+ && J(k)= \int \prod_{ {1\le q\le n\atop} } \delta \left( \sum p - k_{q} \right) \prod_{1\le l\le L\atop} D_{l}(p_{l}) d_{p_{l}}  \\
+ && \hspace{3mm} \text{où,} \hspace{3mm} D_{l}(p_{l}) = \frac{Z(p_{l})}{ m_{l}^{2}-p_{l}^{2}  }.
+\end{eqnarray}
+où $Z$ est un polynôme en $p_{l}$ de degré $r_{l}$.\\
+\vspace{5mm}
+On établie tout d'abord quelques notations :\\
+\hspace{1cm} $q$ : nombre de vertex \\
+\hspace{1cm} $n$ : nombre total de vertex \\
+\hspace{1cm} $l$ : nombre de ligne interne \\
+\hspace{1cm} $L$ : nombre total de ligne \\
+\hspace{1cm} $m$ : nombre de dérivée à chaque vertex \\
+\hspace{1cm} $d$ : dimension \\
+}
+
+\frame{
+\scriptsize
+Scaling :
+\begin{eqnarray}
+ p_i , k_i \rightarrow a p_i , a k_i
+\end{eqnarray}
+J  $\rightarrow$ $a^{\omega} J$, où $\omega$ est appelé l'index. \\
+\vspace{3mm}
+\hspace{1cm} $\omega > 0$, le comptage en puissance prévoit une divergence. \\
+\hspace{1cm} $\omega = 0$, le comptage en puissance prévoit une divergence logaritmique. \\
+\hspace{1cm} $\omega < 0$, c'est sûr ça converge ! \\
+
+\begin{eqnarray}
+ \omega &=& \sum_{{1\le l\le L\atop}} (r_{l}-2) + d(L-(n-1)) + n.m\\
+ &=& \sum_{{1\le l\le L\atop}} (r_{l}-2+d) - d(n-1) + n.m
+\end{eqnarray}
+
+}
+
+\frame{
+\scriptsize
+
+On est à présent  dans le cas de Yang-Mills, on considère alors :\\
+\vspace{2mm}
+\hspace{1cm} $L^{A}_{in}$ : nombre de ligne interne de $A$.\\
+\hspace{1cm} $L^{c}_{in}$ : nombre de ligne interne de $c$.\\
+\hspace{1cm} $L^{A}_{ex}$ : nombre de ligne externe de $A$.\\
+\hspace{1cm} $L^{c}_{ex}$ : nombre de ligne externe de $c$.\\
+\hspace{1cm} $n_{4}$ : nombre total de vertex $AAAA$.\\
+\hspace{1cm} $m_{4}$ : nombre de dérivée à chaque vertex $AAAA$, ici $m_{4}=0$.\\
+\hspace{1cm} $n_{3}$ : nombre total de vertex $AAA$.\\
+\hspace{1cm} $m_{3}$ : nombre de dérivée à chaque vertex $AAA$, ici $m_{3}=1$.\\
+\hspace{1cm} $n_{c}$ : nombre total de vertex $c$.\\
+\hspace{1cm} $m_{c}$ : nombre de dérivée à chaque vertex $c$, ici $m_{c}=1$.\\
+\hspace{1cm} $r_{l}=0$ : degré de $Z$.\\
+
+de plus on a :
+\begin{eqnarray}
+ 2L^{A}_{in} + L^{A}_{ex} = 4n_{4}+3n_{3}+n_{c}  \hspace{3mm} &et& \hspace{3mm}   2L^{c}_{in} + L^{c}_{ex} = 2n_{c}
+\end{eqnarray}
+et donc :
+\begin{eqnarray}
+ \omega &=& d -L^{A}_{ex}-L^{c}_{ex} - n_{4} (d-4) - n_{3} (d-4) - n_{c} (d-4)
+\end{eqnarray}
+Cas particulier $d=4$, $\omega$ depend uniquement du nombre de ligne externe. \\
+On a donc la relation suivante :
+\begin{eqnarray}
+ \omega &=& 4-L^{A}_{ex}-L^{c}_{ex}
+\end{eqnarray}
+
+}
+
+\frame{
+\scriptsize
+
+Les seules diagrammes divergents dans la théorie de Yang Mills sont donc les suivants :
+
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Régularisation dimmensionnelle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Définition}
+\scriptsize
+
+\begin{eqnarray}
+ J(k) = \int d^{4}p \hspace{1mm} f(p,k)  &\rightarrow& J(k,d) = \int d^{d}p \hspace{1mm} f(p,k)
+\end{eqnarray}
+Pour définir la régularisation dimenssionnelle nous nous donnons ces trois conditions :
+\begin{enumerate}
+\item translation
+          \begin{eqnarray}
+           \int d^{d}p \hspace{1mm} F(p+q) = \int d^{d}p \hspace{1mm} F(p)
+          \end{eqnarray}
+\item expansion
+          \begin{eqnarray}
+           \int d^{d}p \hspace{1mm} F(a.p) = |a^{-d} | \int d^{d}p \hspace{1mm} F(p)
+          \end{eqnarray}
+\item factorisation
+          \begin{eqnarray}
+           \int d^{d_1}p d^{d_2}q \hspace{1mm} f(p) g(q) = \int d^{d_1}p \hspace{1mm} f(p)  \int d^{d_2}q \hspace{1mm} g(q)
+          \end{eqnarray}
+\end{enumerate}
+}
+
+\frame{
+\frametitle{Régularisation dimenssionnelle d'un diagramme}
+\scriptsize
+
+
+
+Paramétrisation de Feynman :
+\begin{eqnarray}
+ \frac{1}{k^2+(p-k)^2} = \int_0^{1} dz \frac{1}{\left[k^2(1-z)+(p-k)^2z\right]^2}
+\end{eqnarray} 
+suivi du changement de variable : 
+\begin{eqnarray}
+ k \rightarrow k+pz
+\end{eqnarray}
+La fonction beta :  
+\begin{eqnarray}
+ B(x,y) &=& \int_{0}^{1} dz z^{x-1} (1-z)^{y-1} = \int_{0}^{+\infty}  dt t^{x-1} (1+t)^{-x-y} \\
+            &=& \frac{\Gamma(x) \Gamma(y)}{\Gamma(x+y)}
+\end{eqnarray}
+}
+
+\frame{
+\scriptsize
+
+\begin{eqnarray}
+\Pi^{ab}_{\mu\nu}(p) = \frac{-i g^2 \delta^{ab}}{\left(4\pi\right)^{d/2}}   \Bigg[ \nonumber \\
+&& \vspace{2mm} \hspace{-2cm} g_{\mu\nu}p^2  \bigg(
+5\frac{\Gamma(\frac{d}{2}-1)\Gamma(\frac{d}{2}-1)}{\Gamma(d-2)} 
+-2\frac{\Gamma(\frac{d}{2})\Gamma(\frac{d}{2}-1)}{\Gamma(d-1)}
++2\frac{\Gamma(\frac{d}{2}+1)\Gamma(\frac{d}{2}-1)}{\Gamma(d)}       \nonumber   \\ 
+&& +\frac{6(d-1)}{2-d}\frac{\Gamma(\frac{d}{2})\Gamma(\frac{d}{2})}{\Gamma(d)} \bigg)  \nonumber \\
+&& \vspace{2mm} \hspace{-2cm} - p_{\mu}p_{\nu}
+\bigg((4n-6)\frac{\Gamma(\frac{n}{2})\Gamma(\frac{d}{2})}{\Gamma(d)}
+-(n-6)\frac{\Gamma(\frac{d}{2}-1)\Gamma(\frac{d}{2}-1)}{\Gamma(d-2)}  \bigg) \nonumber  \\
+&& \vspace{2mm} \Bigg]. \left(-\frac{p^2}{\mu}\right)^{\frac{d}{2}-2}\Gamma(2-\frac{d}{2})   
+\end{eqnarray}
+}
+
+\frame{
+\scriptsize
+
+$\left(-\frac{p^2}{\mu}\right)^{\frac{n}{2}-2}\Gamma(2-\frac{n}{2}) $ diverge en $n=4$ !  \\
+Developpement asymptotique de la fonction Gamma.  $\epsilon = \left(\frac{n}{2}-2\right)$
+\begin{eqnarray}
+\Pi^{ab}_{\mu\nu}(p) &=& \frac{-i g^2 \delta^{ab}}{16 \pi^{2}} \left[
+\left( g_{\mu\nu}p^2 - p_{\mu}p_{\nu} \right) \left( \frac{19}{6} \epsilon^{-1} + C_1 \right)
+- \frac{1}{2} p_{\mu} p_{\nu} ( C_2 + \frac{1}{\epsilon} ) \right.  \nonumber  \\ 
+    &+& \left. \left( g_{\mu \nu} p^2 - p_{\mu} p_{\nu} \right) \frac{19}{6} ln(\frac{\mu^2}{-p^2})
+-\frac{1}{2} p_{\mu} p_{\nu}  ln( \frac{\mu^2}{- p^2} ) \right]
+\end{eqnarray} 
+}
+
+\frame{
+\scriptsize
+
+\underline{\textbf{Diagramme à une boucle en les fantômes}}
+
+
+\begin{eqnarray}
+\Pi^{ab}_{\mu\nu}(p) &=& \frac{-i g^2 \delta^{ab}}{16 \pi^{2}} \left[
+\left( g_{\mu\nu}p^2 - p_{\mu}p_{\nu} \right) \left( \frac{1}{6} \epsilon^{-1} + C_3 \right)
++ \frac{1}{2} p_{\mu} p_{\nu} ( C_4 + \frac{1}{\epsilon} ) \right.\\ 
+    &+& \left. \left( g_{\mu \nu} p^2 - p_{\mu} p_{\nu} \right) \frac{1}{6} ln(\frac{\mu^2}{-p^2})
++\frac{1}{2} p_{\mu} p_{\nu}  ln( \frac{\mu^2}{- p^2} ) \right]
+\end{eqnarray}
+\vspace{3mm}
+\underline{\textbf{Tadpole}}\\
+
+
+Pas de contribution
+
+}
+\frame{
+\scriptsize
+
+\textbf{Finalement,}
+\begin{equation}
+\Pi^{ab}_{\mu \nu}(p) = \frac{-i g^2 \delta^{ab}}{16 \pi^{2}} 
+\left( g_{\mu\nu}p^2 - p_{\mu}p_{\nu} \right) 
+\left[ \frac{10}{3} \epsilon^{-1} + C_5 + \frac{10}{3} ln(\frac{\mu^2}{-p^2})  \right]
+\end{equation}
+On a réussi à isoler la divergence.\\
+Le contre terme correspondant est donc :
+\begin{eqnarray}
+&&  (z_{2} - 1) =\frac{5g^2}{24 \pi^2} \epsilon^{-1} \\
+&& \delta \mathcal{L}_{A^{2}} = (z_{2} - 1) \frac{1}{2} tr [ ( \partial_{\nu} A_{\mu} - \partial_{\mu} A_{\nu} )^2 ]
+\end{eqnarray}
+Lagrangien régularisé :
+\begin{eqnarray}
+\mathcal{L}_{R} &=& \mathcal{L} + \delta \mathcal{L}_{A^2} +  \delta \mathcal{L}_{A^3} +  \delta \mathcal{L}_{A^4}  
++  \delta \mathcal{L}_{\overline{c}c}  + \delta \mathcal{L}_{\overline{c}Ac}  
+\end{eqnarray}
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Preuve de la renormalisabilité à tous les ordres}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Preuve de la renormalisabilité à tous les ordres}
+\scriptsize
+
+Équation de Zinn-Justin :
+\begin{eqnarray}
+ \int dx \left[ \frac{\delta \Gamma}{\delta A^{a}_{\mu}} \frac{\delta \Gamma }{i \delta k^{a}_{\mu}} 
++ \frac{\delta \Gamma}{\delta c^{a}}\frac{\delta \Gamma }{i \delta l^{a}} \right] = 0.
+\end{eqnarray}
+ Développement en série de $\Gamma$
+\begin{eqnarray}
+ && \Gamma = \Gamma^{0} + \Gamma^{1} + \Gamma^{2} + ...  \\
+ && \text{avec} \hspace{2mm} \Gamma^{n} = \Gamma_{R}^{n} + \Gamma^{n}_{div}
+\end{eqnarray}
+ On pose,
+\begin{eqnarray}
+ \Gamma^1 * \Gamma^2 = \int dx \left( \frac{\delta \Gamma^{1}}{\delta A} \frac{\delta \Gamma^{2}}{\delta k} 
++ \frac{\delta \Gamma^{1}}{\delta c} \frac{\delta \Gamma^{2}}{\delta l} \right)
+\end{eqnarray}
+Réécriture de l'équation de Zin-Justin :
+\begin{eqnarray}
+ \sum_{p=0}^{n} \Gamma^{(p)} * \Gamma^{(n-p)} = 0
+\end{eqnarray}
+
+}
+
+\frame{
+\scriptsize
+
+\textbf{n=0}
+\begin{eqnarray}
+ && \Gamma^{0} = \int dx \left[ \mathcal{L} + k^{\mu}_{a} s A^{a}_{\mu} - l^{a} s c^{a} \right] := I\\
+ && I*I = 0
+\end{eqnarray}
+
+
+\textbf{n=1}
+\begin{equation}
+ \sum_{p=0}^{1} \Gamma^{(p)} * \Gamma^{(n-p)} = 0 = \Gamma^{0} * \Gamma^{1} + \Gamma^{1} * \Gamma^{0}
+\end{equation}
+\begin{eqnarray*}
+ && I * \Gamma^{1}_{R} + \Gamma^{1}_{R} * I = 0 \hspace{2mm} \rightarrow \hspace{2mm} \text{Cette relation est bien vérifiée !} \\
+ && I * \Gamma^{1}_{div} + \Gamma^{1}_{div} * I = 0 \hspace{2mm} \rightarrow \hspace{2mm} \text{On veut que cette relation soit 
+vérifiée.}
+\end{eqnarray*}
+On a envie d'écrire :
+\begin{eqnarray}
+I_{1} = I - \Gamma^{1}_ {div} &\text{mais on doit avoir :}&  I_{1} * I_{1} = 0.
+\end{eqnarray}
+Or $I_{1}$ est le terme renormalisé à l'ordre 1, et on a déjà calculé les contres termes à cet ordre. On a donc :
+\begin{eqnarray}
+ I_{1} \left( A, c, \overline{c}, k, l \right) = I \left( z_{2}^{\frac{1}{2}} A , \tilde{z}_{2}^{\frac{1}{2}} c , 
+ \tilde{z}_{2}^{\frac{1}{2}} \overline{c} , \tilde{z}_{2}^{\frac{1}{2}} k , z_{4} l \right),
+\end{eqnarray}
+avec :
+\begin{eqnarray}
+ I_{1} *  I_{1}  &=&  0
+\end{eqnarray}
+
+}
+
+
+\frame{
+\scriptsize
+
+\textbf{Le cas $n$ quelconque :}  \\
+\begin{eqnarray}
+ &&\Gamma^{(0)} * \Gamma^{(n)} + \Gamma^{(n)} * \Gamma^{(0)} = -\sum_{p=1}^{n-1} \Gamma^{(p)} * \Gamma^{(n-p)}
+\end{eqnarray}
+$\sum_{p=1}^{n-1} \Gamma^{(p)} * \Gamma^{(n-p)}$ est fini par hypothèse de récurrence.\\
+Et donc on veut :
+\begin{eqnarray}
+  && I * \Gamma^{(n)}_{div} + \Gamma^{(n)}_{div} * I = 0
+\end{eqnarray}
+On défint $\sigma$ tel que :
+\begin{eqnarray}
+ && \sigma \Gamma^{n}_{div} := I * \Gamma^{n}_{div} + \Gamma^{n}_{div} * I = 0  \\
+ && \hspace{-3.8cm} \text{On pose} \hspace{5mm} \left(x_{i}\right) = \left(A,c\right) 
+ \text{ \hspace{1mm} et \hspace{1mm} }  \left(\theta_{i}\right) = \left(k,l\right) \\
+ && \sigma := \frac{\partial I}{\partial x_{i}} \frac{\partial}{\partial \theta_{i}} + 
+\frac{\partial I}{\partial \theta_{i}} \frac{\partial}{\partial x_{i}} \\
+& \hspace{-5cm} \text{On a :} \hspace{2mm} \sigma^{2} = 0
+\end{eqnarray}
+
+}
+
+\frame{
+\scriptsize
+
+On se rappelle que l'on a :
+\begin{eqnarray*}
+ I &=&  \int \left[
+\frac{-1}{4g} F^{a}_{\mu\nu}(x)F^{a}_{\mu \nu}(x) 
++ \frac{1}{\alpha}(\partial_{\mu}A_{\mu}^{a})^2 .
++ \overline{c}^{a}(x)M^{ab}c^{b}(x) 
++ k_{\mu}^{a} D_{\mu}c^{a} 
++ \frac{1}{2}f^{abd}l^ac^bc^d \right]
+\end{eqnarray*} 
+
+On peut alors écrire :
+\begin{eqnarray}
+ \Gamma^{n}_{div} &=& \int dx \left[  L(A) +  \left(  \overline{c}^{a} \partial_{\mu}  + k_{\mu}^{b} \right) \Delta_{mu} c^{b} 
++ \frac{\gamma}{2} f^{abd} l^{a}c^{b}c^{d} \right]
+\end{eqnarray}
+Par analyse dimenssionnelle on peut déjà en déduire :
+\begin{eqnarray}
+ && d(\Delta) = 1 \hspace{3mm} \text{et} \hspace{3mm}  g(\Delta) = 0 \\
+ && \text{donc,} \hspace{3mm} \Delta_{\mu} = \alpha \partial_{\mu} +\beta f^{abd} A^{d}_{\mu}
+\end{eqnarray}
+on peut alors calculer :
+\begin{eqnarray}
+ \sigma \Gamma^{n}_{div} = 0 \Leftrightarrow  
+D_{\mu} \frac{\partial L}{\partial A_{\mu}} + (\beta-\alpha) f^{abd} A^{b}_{\mu}  \frac{\partial \mathcal{L}}{\partial A_{\mu}} = 0
+\end{eqnarray}
+dont la solution est :
+\begin{eqnarray}
+ L &=& a \mathcal{L} + (\beta - \alpha) A \frac{\mathcal{L}}{A}
+\end{eqnarray}
+
+}
+
+\frame{
+\scriptsize
+
+On a donc au final :
+\begin{eqnarray}
+ \Gamma^{n}_{div} &=& \left[ \int dx \left( ( \beta - \alpha + \frac{a}{2}) \left[A \frac{\delta}{\delta A} 
++ l \frac{\delta}{\delta l} \right] + \frac{\alpha}{2} \left[k \frac{\delta}{\delta k} + c \frac{\delta}{\delta c} 
++ \overline{c} \frac{\delta}{\delta  \overline{c} } \right]  \right) - \frac{\lambda}{2} g \frac{\delta}{\delta g}    \right] \mathcal{I} \nonumber
+\end{eqnarray}
+
+\noindent
+Or par hypothèse de récurence on a : 
+\begin{eqnarray}
+ I_{n-1} &=& I \left( z_{2,n-1}^{\frac{1}{2}}A , \tilde{z}^{\frac{1}{2}}_{2,n-1}c, 
+\tilde{z}^{\frac{1}{2}}_{2,n-1} \overline{c} , \tilde{z}^{\frac{1}{2}}_{2,n-1}k , z_{4,n-1} l, z_{g,n-1} g  \right),
+\end{eqnarray}
+ce qui nous permet d'écrire : ($I_{n} = I_{n-1} - \Gamma^{n}_{div}$)
+\begin{eqnarray}
+ && z_{2,n}^{\frac{1}{2}} = z_{2,n-1}^{\frac{1}{2}} - \left( \beta - \alpha + \frac{a}{2} \right)\\
+ && \tilde{z}_{2,n}^{\frac{1}{2}} = \tilde{z}_{2,n-1}^{\frac{1}{2}} - \left( \frac{\alpha}{2}\right) \\
+ && z_{g,n}^{\frac{1}{2}} = z_{g,n-1}^{\frac{1}{2}} - \left( \frac{\lambda}{2}\right)
+\end{eqnarray}
+
+On a donc montré qu'à chaque ordre on a un nombre finis de contre termes. Ce qui achève la démonstration de la renormalisabilité de la théorie
+à tout les ordres.
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Apparté Non-Commutatif}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Espace de Moyal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Espace de Moyal}
+\scriptsize
+
+L'espace de Moyal est une déformation de l'espace euclidien. \\
+On définit le produit de Moyal de la façon suivante :
+\begin{eqnarray}
+ \forall a,b \in \mathcal{S} , \hspace{1cm}  (a \star b) (x)  = \frac{1}{(\pi \theta)^{D}}  \int  d^{D}y    d^{D}z   a(x+y)   b(x+z)   
+e^{-i y \tilde{z} }
+\end{eqnarray}
+où,
+\begin{eqnarray}
+ &\bullet&  \cal{S} (\mathbb{R}^{D}) \hspace{2mm} \text{est l'espace des fonctions Schwartz de} \hspace{2mm} \mathbb{R}^{D} \\
+ &\bullet&  \tilde{z}_{\nu}  =  2 \Theta^{-1}_{\mu \nu} z_{\nu}  \\
+ &\bullet&  y \tilde{z} = y_{\mu}  \tilde{z}_{\nu}  \\
+ &\bullet&  \Theta_{\mu \nu}  =  \theta  \text{diag ( J,..., J) , une matrice} \hspace{2mm} D \times D  \\
+ &\bullet&  J = 
+\left(
+  \begin{array}{ c c }
+     0 & -1 \\
+     1 & 0
+  \end{array} 
+\right)
+\end{eqnarray}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Théorie de Yang Mills Non Commutative sur le plan de Moyal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Theorie de Yang Mills sur le plan de Moyal}
+\scriptsize
+
+Action sur le plan de Moyal
+\begin{eqnarray}
+ \cal{I}  &=&  \int d^{2 } x  \left(  \frac{1}{4}  F_{\mu  \nu}  \star  F_{\mu  \nu}  + s \left( \overline{c} \star \partial_{\mu} A_{\mu}   
++  \frac{\alpha}{2} \overline{c} \star b \right)  \right)
+\end{eqnarray}\\
+\vspace{-3mm}
+\textbf{Règles de feynman}\\
+On considere le groupe SU(N), et le groupe U(1). Les indices sont noté par des lettres majuscule  
+$A=(0,a)$, où $a$ designe la partie SU(N), 0 la partie U(1). \\
+
+\underline{Propagateur:}
+\begin{eqnarray}
+ G^{ A^{A} B^{B} } (k)  &=&  \frac{ \delta^{AB} }{ k^2 } \left(  \delta_{\mu \nu}  - (1-\alpha)  \frac{ k_{\mu} k_{\nu} }{ k^2 } \right) \\
+ G^{ \overline{c}^{A} c^{B} } (k)  &=& - \frac{ \delta^{AB} }{ k^2 }
+\end{eqnarray}
+\vspace{2mm}
+\underline{Vertex} (2 fantomes et un champ de jauge)
+\begin{eqnarray}
+ V_{\mu}^{ \overline{c}^{0} A^{A} c^{B} } (q_1 , k_2 , q_3 ) &=& -2ig (2 \pi)^2 \delta^{2} ( q_1 +k_2 +q_3 ) q_{3_{\mu}} \frac{d^{AB0}}{2} 
+sin( \frac{\epsilon}{2}  q_1 \tilde{q}_3 ) \\
+ V_{\mu}^{ \overline{c}^{a} A^{b} c^{c} } (q_1 , k_2 , q_3 ) &=& -2ig (2 \pi)^2 \delta^{2} ( q_1 +k_2 +q_3 ) q_{3_{\mu}} \mathcal{F}^{acb}(q_1 , q_3)
+\end{eqnarray}
+}
+
+\frame{
+\scriptsize
+
+Diagramme 1 boucle avec deux lignes externe en fantômes
+\begin{eqnarray*}
+ \omega_{00}(p) &=&  \int  \frac{d^D k}{(2 \pi)^D}
+V_{\nu}^{ \overline{c}^{0} A^{B} c^{0} } (p-k , k , -p )
+V_{\mu}^{ \overline{c}^{0} A^{A} c^{0} } (p,-k,k-p )
+G^{ \overline{c}^{0} c^{0} } (k-p)
+G^{ A^{A} A^{B} }_{\mu \nu } (k) 
+\end{eqnarray*}
+Divergence IR :
+\begin{eqnarray}
+ \lim\limits_{
+\begin{array}{l}
+D \to 2\\
+p \to 0
+\end{array}}   \omega_{00}(p)  &=&   - \frac{1}{2}  g^2  (2 \pi)^3  N^{-1} \delta^{00}
+\int_{0}^{1}  dx  x
+\left(
+ \frac{1}{x(1-x)} 
+-  \frac{1}{x(1-x)} 
+\right)      
+\end{eqnarray}
+On a donc :
+\begin{eqnarray}
+ \lim\limits_{
+\begin{array}{l}
+D \to 2\\
+p \to 0
+\end{array}}   \omega_{00}(p)  &=&  0
+\end{eqnarray}
+Dans ce cas les divergences infrarouge ''s'auto-annulent.''
+
+
+
+
+
+
+
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Conclusion}
+
+\textbf{Bilan}\\
+\vspace{2mm}
+$\bullet$ \hspace{1mm}Une opportunité d'approfondir et de completer mes connaissances en théories des champs.\\
+\vspace{2mm}
+$\bullet$ \hspace{1mm}Une introduction aux théories des champs non commutatives.\\
+\vspace{1cm}
+\textbf{Perspectives}\\
+\vspace{2mm}
+$\bullet$ \hspace{1mm}S'intéresser, dans le cas commtatif, aux brisures spontanées de symétries.\\
+\vspace{2mm}
+$\bullet$ \hspace{1mm}Dans un premier temps finir les caluls pour le cas D=2, et ensuite tenter de comprendre pleinement les théories 
+de jauge sur ces espaces non commutatifs.
+
+}
+
+
+\frame{
+\LARGE
+\begin{center}
+ Merci pour votre attention.
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%         Annexes          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+
+\frametitle{Annexe}
+
+\textbf{Interprétation Géométrique}
+\scriptsize
+\vspace{2mm}\\
+d : opérateur de De Rham ($d^2 = 0$), \hspace{1cm} $d : \Omega^{p,g} \rightarrow \Omega^{p+1,g} $\\
+s : opérateur BRST ($s^2 = 0$), \hspace{1.9cm} $s : \Omega^{p,g} \rightarrow \Omega^{p,g+1}$ \\
+\begin{eqnarray}
+                A_{\mu}^{a}         \rightarrow       A_{\mu}^{a}           +  \delta A_{\mu}^{a}
+\hspace{5mm}  &\text{avec}&   \hspace{5mm}  
+\delta  A_{\mu}^{a} := s  A_{\mu}^{a} = D_{\mu} c^{a} \\
+                c^{a}                \rightarrow      c^{a}                 +  \delta c^{a}   
+\hspace{5mm}  &\text{avec}&   \hspace{5mm}    
+\delta  c^{a} := s  c^{a} = - \frac{1}{\alpha} ( \partial_{\mu} A_{\mu}^{a} ) \\
+                \overline{c}^{a}     \rightarrow      \overline{c}^{a}      +  \delta  \overline{c}^{a}   
+                \hspace{5mm}  &\text{avec}&   \hspace{5mm} 
+\delta  \overline{c}^{a} := s  \overline{c}^{a} = - \frac{1}{2} f^{abd} c^{b} c^{d}  .
+\end{eqnarray}
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+   Champs & Degré des formes & Degré en fantôme \\
+   & p & q \\
+\hline
+\hline
+ $A$ & +1 & 0 \\
+\hline
+ $c$ & 0 & +1 \\
+\hline
+ $\overline{c}$ & 0 & -1 \\
+\hline
+\hline
+ $sA$ & +1 & \textcolor{red}{+1} \\
+\hline
+ $sc$ & 0 & +1 \textcolor{red}{+1} = 2 \\
+\hline
+\end{tabular}
+\end{center}
+\end{figure}
+
+}
+
+\frame{
+\scriptsize
+
+\begin{figure}
+\begin{eqnarray}
+ \tilde{A}  &:=& A^{1,0} + c^{0,1}\\
+ \tilde{F}  &:=& \tilde{d} \tilde{A}^{1,1} + \frac{1}{2} \left[ \tilde{A}^{1,1} , \tilde{A}^{1,1} \right] := F
+\end{eqnarray}
+Deux des transformations BRST :
+\begin{eqnarray}
+  && sc = - \frac{1}{2} \left[ c , c \right] \\
+  && sA = - \left( dc + [A,c] \right) = Dc ,
+\end{eqnarray}
+\end{figure}
+}
+
+\end{document}

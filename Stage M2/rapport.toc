@@ -1,0 +1,41 @@
+\select@language {italian}
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {section}{\numberline {2}Quelques consid\IeC {\'e}rations classiques}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Analyse g\IeC {\'e}om\IeC {\'e}trqiue}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}\IeC {\'E}quation du mouvement, et autres}{6}{subsection.2.2}
+\contentsline {section}{\numberline {3}Quantification du champ de Yang Mills}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Intoduction \IeC {\`a} l'int\IeC {\'e}grale de chemin}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Quantification hamiltonienne}{10}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Mise en \IeC {\'e}vidence de la dynamique hamiltonienne}{10}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Jauge de Coulomb}{12}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}M\IeC {\'e}thode de Faddeev Popov}{14}{subsubsection.3.2.3}
+\contentsline {subsection}{\numberline {3.3}Quantification lagrangienne}{18}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}R\IeC {\`e}gles de Feynman}{19}{subsection.3.4}
+\contentsline {section}{\numberline {4}Sym\IeC {\'e}trie BRST (Becchi, Rouet, Stora, et Tyupkin)}{19}{section.4}
+\contentsline {subsection}{\numberline {4.1}D\IeC {\'e}finition}{19}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Interpr\IeC {\'e}tation g\IeC {\'e}om\IeC {\'e}trique des transformations BRST}{22}{subsection.4.2}
+\contentsline {section}{\numberline {5}Identit\IeC {\'e}s de Slavnov}{25}{section.5}
+\contentsline {section}{\numberline {6}Renormalisation}{26}{section.6}
+\contentsline {subsection}{\numberline {6.1}Calcul d'un diagramme de Feynman}{26}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Comptage en puissance}{27}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}D\IeC {\'e}finition}{27}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Identification des diagrammes divergents}{28}{subsubsection.6.2.2}
+\contentsline {subsection}{\numberline {6.3}R\IeC {\'e}gularisation dimensionnelle}{29}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}D\IeC {\'e}finition}{29}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}R\IeC {\'e}gularisation \IeC {\`a} 1 boucle}{30}{subsubsection.6.3.2}
+\contentsline {subsection}{\numberline {6.4}Preuve de la renormalisabilit\IeC {\'e} \IeC {\`a} tout les ordres}{35}{subsection.6.4}
+\contentsline {section}{\numberline {7}Appart\IeC {\'e} Non Commutative}{39}{section.7}
+\contentsline {subsection}{\numberline {7.1}Alg\IeC {\`e}bre de Moyal et th\IeC {\'e}orie de jauge}{39}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Theorie de yang Mills Non Commutative sur le plan de Moyal}{41}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Diagramme 1 boucle avec deux lignes externe en fant\IeC {\^o}me}{42}{subsubsection.7.2.1}
+\contentsline {section}{\numberline {8}Discussion}{46}{section.8}
+\contentsline {section}{\numberline {9}Annexes}{48}{section.9}
+\contentsline {subsection}{\numberline {9.1}Notations et Conventions utilis\IeC {\'e}es}{48}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}R\IeC {\`e}gles de Feynman}{48}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Motivation}{48}{subsubsection.9.2.1}
+\contentsline {subsubsection}{\numberline {9.2.2}Calculs des propagateurs}{50}{subsubsection.9.2.2}
+\contentsline {subsubsection}{\numberline {9.2.3}Calculs des vertex}{51}{subsubsection.9.2.3}
+\contentsline {subsection}{\numberline {9.3}Notions utiles de th\IeC {\`e}orie des distributions}{51}{subsection.9.3}
+\contentsline {section}{\numberline {10}Remerciements}{53}{section.10}
+\contentsline {section}{\numberline {11}R\IeC {\'e}f\IeC {\'e}rences}{54}{section.11}
